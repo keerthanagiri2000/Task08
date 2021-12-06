@@ -1,0 +1,118 @@
+1.Answer;
+   class Movie{
+        String title;
+        String studio;
+        String rating;
+   }
+
+   a)Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing 
+       the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+     
+    Answer;
+    class Movie(String t, String s, String r){
+       title=t;
+       studio=s;
+       rating=r;
+      }
+
+   b)The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+    
+      Answer; 
+      class Movie(String t, String s){
+      title=t;
+      studio=s;
+      rating="PG ";
+      }
+  
+   c)Write a method getPG, which takes an array of base type Movie as its argument, and returns a 
+      new array of only those movies in the input array with a rating of "PG". You may assume the input 
+      array is full of Movie instances. The returned array need not be full.
+      
+     Anwer;
+     getPG(Movie[] mov){
+       Movie[] pgMov=new Movie[mov.length];
+       var newArrayIndedx=0;
+       for(var i=0;i<mov.length;i++){
+        if(mov[i].rating.equals("PG")){
+         pgMov [newArrayIndex]=mov[i];
+         newArrayIndex++;
+        }
+       }
+       return pgMov;
+     }
+
+    d)Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, 
+        the studio “Eon Productions”, and the rating “PG­13”
+        
+       Answer;
+       Movie mov=new Movie("Casino Royale", "Eon Productions", "PG-13");
+
+2.Convert the UML diagram to Typescript class. - use number for double
+
+   Answer;
+   class Circle{
+     radius:number=1.0
+     color:colorData="Red"
+     
+     constructor(radius?:number, color?:colorData){
+     if(typeof(radius)!=="undefined") { this.radius = radius }
+        if(typeof(color)!=="undefined") { this.color = color }
+     }
+     getRadius():number{
+        return this.radius
+    }
+    setRadius(radius:number){
+        this.radius = radius
+    }
+    getColor():colorData{
+        return this.color
+    }
+    setColor(color:colorData){
+        this.color = color
+    }
+    toString():String{
+        return `Radius: {this.radius} Color: {this.color}`
+    }
+    getArea():number{
+        return ((Math.PI)*this.radius*this.radius)
+    }
+     getCircumference():number{
+        return (2*(Math.PI)*this.radius)
+    }
+}
+
+3.Write a “person” class to hold all the details.
+   Answer;
+    class Person{
+          constructor(firstName, lastName, age, gender, mark, birthYear, address){
+          this.firstName=firstName;
+          this.lastName=lastName;
+          this.age=age;
+          this.gender=gender;
+          this.mark=mark;
+          this.birthYear=birthYear;
+          this.address=address;
+          }
+     }
+    let r1=new Person("john", "de", 22, "male", 90, 2000, chennai);
+    let r2=r1;
+    console.log(r1.firstName, r1.age);
+   
+
+4.write a class to calculate uber price.
+   Answer;
+    class Price{
+         constructor(baseFare, costPerMinute, time, costPerMile, distance, surgePrice, bookingFee ){
+             this.baseFare=baseFare;
+             this.costPerMinute=costPerMinute;
+             this.time=time;
+             this.costPerMile=costPerMile;
+             this.distance=distance;
+             this.surgePrice=surgePrice;
+             this.bookingFee=bookingFee;
+       }
+  }
+  let calculatePrice=new Price(1, 0.5, 2, 20, 1, 2, 50)
+  let getPrice=baseFare + ((costPerMinute x time) + (costPerMile x distance) x surgePrice) + bookingFee ;
+  console.log(getPrice);
+  
